@@ -23,9 +23,9 @@
         }
     </script>
 </head>
-<body class="antialiased">
+<body class="antialiased bg-gray-50 text-gray-800 transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100">
     <!-- Header/Navigation Bar -->
-    <header class="bg-indigo-700 shadow-lg fixed w-full z-10">
+    <header class="bg-indigo-700 shadow-lg fixed w-full z-10 dark:bg-indigo-900">
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
             <!-- Company Logo -->
             <a href="#" class="rounded-lg transition duration-300">
@@ -56,7 +56,7 @@
             </div>
         </nav>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-indigo-800 pb-4">
+        <div id="mobile-menu" class="hidden md:hidden bg-indigo-800 pb-4 dark:bg-indigo-950">
             <a href="#home" class="block text-white px-4 py-2 text-lg hover:bg-indigo-900 rounded-lg mx-4 mt-2">Home</a>
             <a href="#services" class="block text-white px-4 py-2 text-lg hover:bg-indigo-900 rounded-lg mx-4">Services</a>
             <a href="#about" class="block text-white px-4 py-2 text-lg hover:bg-indigo-900 rounded-lg mx-4">About Us</a>
@@ -82,23 +82,23 @@
         </section>
 
         <!-- Services Section -->
-        <section id="services" class="py-16 md:py-24 bg-gray-50 px-4">
+        <section id="services" class="py-16 md:py-24 px-4">
             <div class="container mx-auto text-center">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-12">Our Storage Services</h2>
+                <h2 class="text-4xl md:text-5xl font-bold mb-12">Our Storage Services</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Service 1: Personal Storage -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
-                        <div class="text-indigo-600 mb-4">
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2 dark:bg-gray-800">
+                        <div class="text-indigo-600 mb-4 dark:text-indigo-400">
                             <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-semibold text-gray-700 mb-3">Personal Storage (Enclosed Units)</h3>
-                        <p class="text-gray-600 leading-relaxed">
+                        <h3 class="text-2xl font-semibold mb-3">Personal Storage (Enclosed Units)</h3>
+                        <p class="leading-relaxed">
                             Perfect for decluttering your home, storing seasonal items, or during a move.
                             All enclosed units feature 24/7 access.
                         </p>
-                        <ul class="text-gray-600 list-disc list-inside mt-4">
+                        <ul class="list-disc list-inside mt-4">
                             <li>8'x10': $40/month</li>
                             <li>10'x12': $55/month</li>
                             <li>10'x20': $75/month</li>
@@ -106,40 +106,65 @@
                     </div>
 
                     <!-- Service 2: Business Storage -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
-                        <div class="text-indigo-600 mb-4">
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2 dark:bg-gray-800">
+                        <div class="text-indigo-600 mb-4 dark:text-indigo-400">
                             <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-1.043-8.734-2.834a1 1 0 00-1.465 1.465c.969 1.558 2.298 2.977 3.962 4.144C6.545 19.019 9.176 20 12 20s5.455-.981 7.49-2.734a1 1 0 00-1.465-1.465zM12 2a1 1 0 00-1 1v6a1 1 0 001 1h0a1 1 0 001-1V3a1 1 0 00-1-1zm0 0a9 9 0 00-9 9c0 4.97 4.03 9 9 9s9-4.03 9-9a9 9 0 00-9-9zm-6 8a1 1 0 00-1 1v2a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 00-1-1H6zm10 0a1 1 0 00-1 1v2a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 00-1-1h-2z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-semibold text-gray-700 mb-3">Business Storage</h3>
-                        <p class="text-gray-600 leading-relaxed">
+                        <h3 class="text-2xl font-semibold mb-3">Business Storage</h3>
+                        <p class="leading-relaxed">
                             Securely store documents, inventory, equipment, or archives. Flexible terms for businesses of all sizes.
                         </p>
                     </div>
 
                     <!-- Service 3: Vehicle Storage -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
-                        <div class="text-indigo-600 mb-4">
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2 dark:bg-gray-800">
+                        <div class="text-indigo-600 mb-4 dark:text-indigo-400">
                             <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9.5A2.5 2.5 0 0111.5 7h4a2.5 2.5 0 012.5 2.5V19m-9 0h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-semibold text-gray-700 mb-3">Vehicle Storage (Outdoor Parking)</h3>
-                        <p class="text-gray-600 leading-relaxed">
+                        <h3 class="text-2xl font-semibold mb-3">Vehicle Storage (Outdoor Parking)</h3>
+                        <p class="leading-relaxed">
                             Safe and reliable outdoor parking for cars, boats, RVs, and motorcycles.
                         </p>
-                        <ul class="text-gray-600 list-disc list-inside mt-4">
+                        <ul class="list-disc list-inside mt-4">
                             <li>Standard Parking: $20/unit per month (24/7 access)</li>
-                            <li>Winter Special (Nov 30 - Memorial Day): $100 (no access during this period)</li>
+                            <li>Winter Special (Nov 30 - Memorial Day): $100</li>
                         </ul>
+                    </div>
+                </div>
+
+                <!-- Storage Size Recommender Section -->
+                <div class="mt-16 bg-white p-8 rounded-xl shadow-lg max-w-2xl mx-auto dark:bg-gray-800">
+                    <h3 class="text-2xl font-semibold mb-6">✨ Storage Size Recommender ✨</h3>
+                    <p class="mb-4">
+                        Tell us what you plan to store (e.g., "king size bed, 2 dressers, 10 boxes, bicycle") and we'll
+                        suggest the best unit size for you.
+                    </p>
+                    <textarea id="storage-items-input" rows="4"
+                              class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-transparent text-lg resize-y
+                              dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600"
+                              placeholder="List items to store (e.g., queen bed, sofa, 5 moving boxes)..."></textarea>
+                    <button id="get-recommendation-button"
+                            class="mt-4 w-full bg-indigo-700 hover:bg-indigo-900 text-white font-bold py-3 px-6 rounded-lg text-lg shadow-md transform hover:scale-105 transition duration-300 ease-in-out">
+                        Get Storage Recommendation
+                    </button>
+                    <div id="recommendation-results" class="mt-6 p-4 bg-gray-50 rounded-lg text-left hidden dark:bg-gray-700">
+                        <p class="font-semibold text-lg mb-2">Recommendation:</p>
+                        <div id="recommendation-text" class="text-gray-800 dark:text-gray-200"></div>
+                        <div id="loading-spinner" class="hidden text-center mt-4">
+                            <div class="animate-spin inline-block w-8 h-8 border-4 border-indigo-500 border-t-transparent rounded-full"></div>
+                            <p class="text-sm text-gray-600 mt-2 dark:text-gray-400">Thinking...</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Call to Action Section -->
-        <section class="bg-indigo-800 text-white py-16 px-4 text-center">
+        <section class="bg-indigo-800 text-white py-16 px-4 text-center dark:bg-indigo-900">
             <div class="container mx-auto">
                 <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Store Your Valuables?</h2>
                 <p class="text-lg mb-8 max-w-2xl mx-auto">
@@ -152,20 +177,20 @@
         </section>
 
         <!-- About Us Section -->
-        <section id="about" class="py-16 md:py-24 bg-white px-4">
+        <section id="about" class="py-16 md:py-24 px-4">
             <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div class="text-center md:text-left">
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">About S&S Storage</h2>
-                    <p class="text-gray-600 leading-relaxed text-lg mb-4">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">About S&S Storage</h2>
+                    <p class="leading-relaxed text-lg mb-4">
                         At S&S Storage, located in Shelley, Idaho, we are proudly owned and operated by a local female.
                         We are dedicated to providing the safest and most convenient storage solutions for our clients.
                     </p>
-                    <p class="text-gray-600 leading-relaxed text-lg mb-4">
-                        With state-of-the-art security, 24/7 access, climate-controlled units, and flexible leasing options,
+                    <p class="leading-relaxed text-lg mb-4">
+                        With security, 24/7 access, and flexible leasing options,
                         your belongings are always in good hands.
                     </p>
-                    <p class="text-gray-600 leading-relaxed text-lg mb-4">
-                        Established in 20XX, we've grown to be a trusted name in the storage industry, serving individuals and businesses
+                    <p class="leading-relaxed text-lg mb-4">
+                        Established in November of 1998, we've grown to be a trusted name in the storage industry, serving individuals and businesses
                         with integrity and a commitment to customer satisfaction.
                     </p>
                     <a href="#contact" class="text-indigo-700 font-semibold text-lg hover:text-indigo-900 transition duration-300">
@@ -173,7 +198,7 @@
                     </a>
                 </div>
                 <div class="flex justify-center flex-col items-center">
-                    <h3 class="text-2xl font-semibold text-gray-700 mb-4">Our Facilities</h3>
+                    <h3 class="text-2xl font-semibold mb-4">Our Facilities</h3>
                     <div class="gallery-container w-full max-w-xl">
                         <!-- Image 1: storage unite.webp (already there as hero background) -->
                         <div class="gallery-item">
@@ -196,55 +221,58 @@
                             <img src="src/PXL_20231024_192250456.jpg" alt="Outdoor Parking Area" class="w-full rounded-xl">
                         </div>
                     </div>
-                    <p class="text-gray-600 text-sm mt-4 italic">Swipe to see more photos of our facility!</p>
+                    <p class="text-sm mt-4 italic">Swipe to see more photos of our facility!</p>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-16 md:py-24 bg-gray-50 px-4">
+        <section id="contact" class="py-16 md:py-24 px-4">
             <div class="container mx-auto text-center max-w-3xl">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-12">Contact Us</h2>
-                <div class="bg-white p-8 rounded-xl shadow-lg">
-                    <p class="text-gray-700 text-lg mb-6">
+                <h2 class="text-4xl md:text-5xl font-bold mb-12">Contact Us</h2>
+                <div class="bg-white p-8 rounded-xl shadow-lg dark:bg-gray-800">
+                    <p class="text-lg mb-6">
                         Have questions or need assistance? Reach out to our friendly team!
                     </p>
                     <div class="flex flex-col md:flex-row justify-center items-center md:space-x-8 space-y-6 md:space-y-0 mb-8">
                         <div class="flex items-center space-x-3">
-                            <svg class="w-8 h-8 text-indigo-700" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-8 h-8 text-indigo-700 dark:text-indigo-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zm3 15a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="text-xl text-gray-700">Sheryl: 208-680-2111</span>
+                            <span class="text-xl">Sheryl: 208-680-2111</span>
                         </div>
                         <div class="flex items-center space-x-3">
-                            <svg class="w-8 h-8 text-indigo-700" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-8 h-8 text-indigo-700 dark:text-indigo-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M18 6L10 12 2 6V4l8 6 8-6v2zM2 8v10h16V8L10 14 2 8z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="text-xl text-gray-700">ss.storage.shelley@gmail.com</span>
+                            <span class="text-xl">ss.storage.shelley@gmail.com</span>
                         </div>
                     </div>
-                    <div class="text-gray-700 text-lg mb-6">
+                    <div class="text-lg mb-6">
                         <p>Our Address:</p>
                         <p>401 Bluebird Ave,</p>
                         <p>Shelley, ID 83274</p>
                         <p class="mt-2">
-                            <a href="https://www.google.com/maps/search/?api=1&query=9VQF%2B98+Shelley,+Idaho,+USA" target="_blank" rel="noopener noreferrer" class="text-indigo-700 hover:underline font-semibold">
+                            <a href="https://www.google.com/maps/search/?api=1&query=9VQF%2B98+Shelley,+Idaho,+USA" target="_blank" rel="noopener noreferrer" class="text-indigo-700 hover:underline font-semibold dark:text-indigo-400">
                                 View on Map
                             </a>
                         </p>
                     </div>
-                    <p class="text-gray-700 text-lg mb-6">
+                    <p class="text-lg mb-6">
                         Serving Shelley, Idaho and surrounding areas.
                     </p>
                     <form class="space-y-6">
                         <div>
-                            <input type="text" placeholder="Your Name" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-transparent text-lg" required>
+                            <input type="text" placeholder="Your Name" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-transparent text-lg
+                              dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600" required>
                         </div>
                         <div>
-                            <input type="email" placeholder="Your Email" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-transparent text-lg" required>
+                            <input type="email" placeholder="Your Email" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-transparent text-lg
+                              dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600" required>
                         </div>
                         <div>
-                            <textarea placeholder="Your Message" rows="5" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-transparent text-lg" required></textarea>
+                            <textarea placeholder="Your Message" rows="5" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-transparent text-lg
+                              dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600" required></textarea>
                         </div>
                         <button type="submit" class="w-full bg-indigo-700 hover:bg-indigo-900 text-white font-bold py-4 px-6 rounded-lg text-xl shadow-md transform hover:scale-105 transition duration-300 ease-in-out">
                             Send Message
@@ -257,7 +285,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 px-4 text-center">
+    <footer class="bg-gray-800 text-white py-8 px-4 text-center dark:bg-indigo-900">
         <div class="container mx-auto">
             <p class="mb-4">&copy; 2025 S&S Storage. All rights reserved.</p>
             <div class="flex justify-center space-x-6">

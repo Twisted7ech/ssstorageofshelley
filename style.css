@@ -1,16 +1,16 @@
 /* Custom Stylesheet for S&S Storage Website */
 
-/* Base styles for light mode */
+/* Base styles for body */
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #f8fafc; /* Light gray background */
-    color: #334155; /* Darker gray text */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for theme change */
+    /* Tailwind will handle background-color and color based on dark mode class on html */
+    /* Add transition for smooth theme change */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Hero section background image */
 .hero-background {
-    background-image: url('storage unite.webp');
+    background-image: url('src/storage unite.webp');
     background-size: cover;
     background-position: center;
 }
@@ -19,60 +19,6 @@ body {
 .logo-img {
     height: 40px; /* Adjust height as needed */
     width: auto;
-}
-
-/* Dark mode styles */
-body.dark {
-    background-color: #1a202c; /* Dark background */
-    color: #e2e8f0; /* Light text */
-}
-
-/* Dark mode specific color overrides using Tailwind classes for consistency */
-body.dark .bg-indigo-700 {
-    background-color: #312e81; /* Darker indigo for header/footer in dark mode */
-}
-body.dark .bg-indigo-800 {
-    background-color: #3730a3; /* Darker indigo for call to action */
-}
-body.dark .bg-indigo-600 {
-    background-color: #4f46e5; /* Darker indigo for CTA button */
-}
-body.dark .text-indigo-100 {
-    color: #a78bfa; /* Lighter indigo for hero text */
-}
-body.dark .text-gray-800 {
-    color: #e2e8f0; /* Light text for headings */
-}
-body.dark .text-gray-600 {
-    color: #cbd5e0; /* Lighter gray for body text */
-}
-body.dark .bg-gray-50 {
-    background-color: #2d3748; /* Darker background for service/contact sections */
-}
-body.dark .bg-white {
-    background-color: #2a303e; /* Darker background for cards */
-}
-body.dark .text-indigo-700 {
-    color: #818cf8; /* Lighter indigo for links/icons */
-}
-body.dark .hover\:text-indigo-200:hover {
-    color: #c7d2fe; /* Lighter indigo on hover */
-}
-body.dark .hover\:bg-indigo-900:hover {
-    background-color: #3f36a6; /* Darker indigo on hover */
-}
-body.dark .border-gray-300 {
-    border-color: #4a5568; /* Darker border for inputs */
-}
-body.dark .focus\:ring-indigo-600:focus {
-    --tw-ring-color: #818cf8; /* Lighter ring color on focus */
-}
-body.dark .text-gray-700 {
-    color: #e2e8f0; /* Light text for contact info */
-}
-body.dark input, body.dark textarea {
-    background-color: #4a5568;
-    color: #e2e8f0;
 }
 
 /* Gallery specific styles */
