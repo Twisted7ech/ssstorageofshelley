@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const loadingSpinner = document.getElementById('loading-spinner');
 
     getRecommendationButton.addEventListener('click', async () => {
-        const items = storageItemsInput.value.trim();
+        const items = storageItemsInput.value.trim().toLowerCase(); // Convert to lowercase for easier matching
         if (!items) {
             recommendationResults.classList.remove('hidden');
             recommendationText.innerHTML = '<p class="text-red-500">Please enter some items to get a recommendation.</p>';
@@ -89,9 +89,16 @@ document.addEventListener('DOMContentLoaded', function() {
         getRecommendationButton.disabled = true; // Disable button during loading
 
         try {
-            const prompt = `Given the following items that a user wants to store, recommend the best storage unit size from the options: 8'x10', 10'x12', and 10'x20'. Provide only the recommended size and a brief reason.
-            Items: ${items}
-            `;
+            let prompt;
+            // Check if the input contains keywords for vehicle storage
+            if (items.includes('travel trailer') || items.includes('rv') || items.includes('boat') || items.includes('motorcycle') || items.includes('car') || items.includes('vehicle')) {
+                prompt = `Based on the user's request to store a "${items}", recommend "Vehicle Storage (Outdoor Parking)". Also include the pricing for standard parking: "$20/unit per month (24/7 access)" and the winter special: "$100 (Nov 30 - Memorial Day): Winter access by appointment only, weather permitting."`;
+            } else {
+                // Original prompt for enclosed units
+                prompt = `Given the following items that a user wants to store, recommend the best storage unit size from the options: 8'x10' ($40/month), 10'x12' ($55/month), and 10'x20' ($75/month). Provide only the recommended size and a brief reason.
+                Items: ${items}
+                `;
+            }
 
             let chatHistory = [];
             chatHistory.push({ role: "user", parts: [{ text: prompt }] });
