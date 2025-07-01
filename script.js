@@ -77,6 +77,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     getRecommendationButton.addEventListener('click', async () => {
         const items = storageItemsInput.value.trim().toLowerCase(); // Convert to lowercase for easier matching
+        console.log("Storage Recommender Debug: User input items:", items);
+
         if (!items) {
             recommendationResults.classList.remove('hidden');
             recommendationText.innerHTML = '<p class="text-red-500">Please enter some items to get a recommendation.</p>';
@@ -95,10 +97,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 prompt = `Based on the user's request to store a "${items}", recommend "Vehicle Storage (Outdoor Parking)". Also include the pricing for standard parking: "$20/unit per month (24/7 access)" and the winter special: "$100 (Nov 30 - Memorial Day): Winter access by appointment only, weather permitting."`;
             } else {
                 // Original prompt for enclosed units
-                prompt = `Given the following items that a user wants to store, recommend the best storage unit size from the options: 8'x10' ($40/month), 10'x12' ($55/month), and 10'x20' ($75/month). Provide only the recommended size and a brief reason.
-                Items: ${items}
-                `;
+                prompt = `Given the following items: "${items}", recommend the best storage unit size from our options: 8'x10' ($40/month), 10'x12' ($55/month), and 10'x20' ($75/month). Provide only the recommended size and a brief, concise reason.`;
             }
+
+            console.log("Storage Recommender Debug: Constructed prompt:", prompt);
 
             let chatHistory = [];
             chatHistory.push({ role: "user", parts: [{ text: prompt }] });
@@ -107,13 +109,25 @@ document.addEventListener('DOMContentLoaded', function() {
             const apiKey = ""; // Canvas will automatically provide the API key
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
+            console.log("Storage Recommender Debug: API URL:", apiUrl);
+            console.log("Storage Recommender Debug: API Payload:", JSON.stringify(payload));
+
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
             });
 
+            console.log("Storage Recommender Debug: API Response Status:", response.status);
+            if (!response.ok) {
+                const errorText = await response.text();
+                console.error("Storage Recommender Debug: API Error Response Body:", errorText);
+                throw new Error(`API request failed with status ${response.status}: ${errorText}`);
+            }
+
             const result = await response.json();
+            console.log("Storage Recommender Debug: Full API Result:", result);
+
 
             if (result.candidates && result.candidates.length > 0 &&
                 result.candidates[0].content && result.candidates[0].content.parts &&
@@ -121,12 +135,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const text = result.candidates[0].content.parts[0].text;
                 recommendationText.innerHTML = `<p>${text}</p>`;
             } else {
-                recommendationText.innerHTML = '<p class="text-red-500">Could not get a recommendation. Please try again.</p>';
-                console.error('Unexpected API response structure:', result);
+                recommendationText.innerHTML = '<p class="text-red-500">Could not get a recommendation. The AI response was empty or malformed. Please try again with a different description.</p>';
+                console.error('Storage Recommender Debug: Unexpected API response structure or empty content:', result);
             }
         } catch (error) {
-            recommendationText.innerHTML = `<p class="text-red-500">An error occurred: ${error.message}. Please try again.</p>`;
-            console.error('Error fetching recommendation:', error);
+            recommendationText.innerHTML = `<p class="text-red-500">An error occurred while fetching the recommendation: ${error.message}. Please check the console for more details and try again.</p>`;
+            console.error('Storage Recommender Debug: Error fetching recommendation:', error);
         } finally {
             loadingSpinner.classList.add('hidden'); // Hide loading spinner
             getRecommendationButton.disabled = false; // Re-enable button
